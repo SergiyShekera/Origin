@@ -154,6 +154,3 @@ def newyork():
     p=b.select('.rSide .description')
     pogoda=p[0].getText()
     print(pogoda.strip())
-    
-    
-

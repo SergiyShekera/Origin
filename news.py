@@ -65,5 +65,3 @@ def parse(html):
 
 def par():
     parse(site('https://www.ukr.net'))
-
-

@@ -11,8 +11,6 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from news import MyTable
 
-email = "sergey3345@ukr.net"
-
 def send_mail():
     email = input('Введи свой емейл: ')
     try:
