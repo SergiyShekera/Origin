@@ -21,20 +21,20 @@ class MyTable(Base):
 
         def __repr__(self):
                 return "<MyTable(%s)>" % (self.news)
-            
+           
 engine = create_engine('postgresql://postgres:root@localhost/test_db')
 Session = sessionmaker(bind=engine)
 session = Session()
 Base.metadata.create_all(engine)        
 
 def site(url):
+
     response = urllib.request.urlopen(url)
     return response.read()
 
 def parse(html):
+
     soup = BeautifulSoup (html, "lxml")
-    data = soup.find('article')
-    dataa = soup.find_all('ul')
 
     ddata = soup.find('article')
     for row in ddata.find_all('ul'):
@@ -58,7 +58,7 @@ def parse(html):
                 session.commit()
                 print('Новости успешно занесенны в базу данных')
             except:
-                print('--збой при заносе в базу данных--')
+                print('--сбой при заносе в базу данных--')
                 
         if i == ('нет'):
             continue

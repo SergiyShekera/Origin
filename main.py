@@ -3,6 +3,7 @@ from pogoda import berlin, london, barselona, madrid
 from pogoda import newyork
 from news import par
 from send_mail import send_mail
+from parser_BITCOIN import parser_BITCOIN
 
 print('Программа запущена')
 
@@ -18,6 +19,7 @@ def start():
 
 def choise():
     print('Выбирай, новости или погода? ')
+    print('Также можешь узнать курс биткоина, введи -биткоин- ')
     print('Для выхода из прогррамы введи -выкл- ')
     a = input('')
     if a == ('новости'):
@@ -26,6 +28,9 @@ def choise():
     if a == ('погода'):
         if __name__ == '__main__':
             pogoda()
+    if a == ('биткоин'):
+        if __name__ == '__main__':
+            bitcoin()            
     if a ==('выкл'):
         pass
     else:
@@ -69,6 +74,13 @@ def pogoda():
         newyork()
     if __name__ == '__main__':
         choise()
+
+def bitcoin():
+    parser_BITCOIN()
+    
+    if __name__ == '__main__':
+        choise()
+
 
 if __name__ == '__main__':
     start()
